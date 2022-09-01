@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = new vis.DataSet([{"id":1,"content":"ForkJoinPool-1-worker-1"}]);
+var items = new vis.DataSet([{"id":1,"group":1,"content":"createpet[1:9]","start":1067,"end":2301,"title":"createpet[1:9] 19:00:01.067-19:00:02.301 add new pet"},{"id":2,"group":1,"content":"createpet[2:21]","start":2308,"end":2756,"title":"createpet[2:21] 19:00:02.308-19:00:02.756 add pet with invalid data"},{"id":3,"group":1,"content":"DeleteAPet[1:9]","start":2844,"end":3293,"title":"DeleteAPet[1:9] 19:00:02.844-19:00:03.293 Delete a pet"},{"id":4,"group":1,"content":"DeleteAPet[2:15]","start":3306,"end":3735,"title":"DeleteAPet[2:15] 19:00:03.306-19:00:03.735 Delete a pet"},{"id":5,"group":1,"content":"findPetByStatus[1:9]","start":3748,"end":4180,"title":"findPetByStatus[1:9] 19:00:03.748-19:00:04.180 Check the service GET method"},{"id":6,"group":1,"content":"findPetByStatus[2:15]","start":4185,"end":4623,"title":"findPetByStatus[2:15] 19:00:04.185-19:00:04.623 Check the service GET method"},{"id":7,"group":1,"content":"updateAnExistingPet[1:9]","start":4637,"end":5056,"title":"updateAnExistingPet[1:9] 19:00:04.637-19:00:05.056 Check the service PUT method"},{"id":8,"group":1,"content":"updateAnExistingPet[2:17]","start":5061,"end":5513,"title":"updateAnExistingPet[2:17] 19:00:05.061-19:00:05.513 Check the service PUT method"}]);
+var container = document.getElementById('visualization');
+var timeline = new vis.Timeline(container);
+timeline.setOptions({ groupOrder: 'content' });
+timeline.setGroups(groups);
+timeline.setItems(items);
+</script>
+  </body>
+</html>
